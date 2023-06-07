@@ -1,5 +1,4 @@
 const { log } = require("console");
-
 const net = require("net");
 
 const connect = function() {
@@ -12,6 +11,7 @@ const connect = function() {
 
   conn.on("connect", () => {
     log("I'm in, let's goo!");
+    conn.write("Name: AAA");
   });
 
   conn.on("data", (data) => {
