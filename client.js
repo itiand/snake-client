@@ -14,7 +14,7 @@ const connect = function() {
     setInterval(() => {
       conn.write("Name: AAA");
 
-    }, 500);
+    }, 2000);
 
   });
 

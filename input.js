@@ -1,6 +1,6 @@
-let connection
+let connection;
 
-const setupInput = function (conn) {
+const setupInput = function(conn) {
   connection = conn;
   const stdin = process.stdin;
   stdin.setRawMode(true);
@@ -10,23 +10,17 @@ const setupInput = function (conn) {
   return stdin;
 };
 
-const handleUserInput = function (data) {
-  if (data === '\u0003') {
-    process.exit();
-  } else if (data === 'w') {
-    console.log(data);
-    connection.write('Move: up')
-  } else if ( data === 'a') {
-    console.log(data);
-    connection.write('Move: left')
-  } else if ( data === 's') {
-    console.log((data));
-    connection.write('Move: down')
-  } else if (data === 'd' ) {
-    console.log(data);
-    connection.write('Move: right')
-  }
+const handleUserInput = function(data) {
+  if (data === '\u0003') process.exit();
+  if (data === 'w') connection.write('Move: up');
+  if (data === 'a') connection.write('Move: left');
+  if (data === 's') connection.write('Move: down');
+  if (data === 'd') connection.write('Move: right');
+
+  if( data === 'c') connection.write('Say: excuse!')
+  if( data === 'e') connection.write('Say: sSssSSSssss')
+
 };
 
 
-module.exports = { setupInput }
+module.exports = { setupInput };
