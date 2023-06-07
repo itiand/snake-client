@@ -13,7 +13,6 @@ const connect = function() {
     log("I'm in, let's goo!");
     setInterval(() => {
       conn.write("Name: AAA");
-      // // conn.write("Move: up");
 
     }, 500);
 
