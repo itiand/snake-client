@@ -12,6 +12,12 @@ const connect = function() {
   conn.on("connect", () => {
     log("I'm in, let's goo!");
     conn.write("Name: AAA");
+    setInterval(() => {
+      conn.write("Name: AAA");
+      // // conn.write("Move: up");
+
+    },500)
+
   });
 
   conn.on("data", (data) => {
